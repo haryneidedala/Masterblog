@@ -1,11 +1,93 @@
-form {
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
     background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post {
+    background: white;
+    margin-bottom: 20px;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 4px solid #4CAF50;
+}
+
+.post h2 {
+    color: #333;
+    margin-top: 0;
+}
+
+.author {
+    color: #666;
+    font-style: italic;
+}
+
+.content {
+    margin: 15px 0;
+    white-space: pre-line;
+}
+
+.add-post-btn {
+    display: inline-block;
+    background: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px;
     margin-bottom: 20px;
 }
 
+.add-post-btn:hover {
+    background: #45a049;
+}
+
+.post-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.update-btn {
+    display: inline-block;
+    background: #2196F3;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.update-btn:hover {
+    background: #0b7dda;
+}
+
+.delete-btn {
+    background: #f44336;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background: #d32f2f;
+}
+
+/* Form Styles */
 .form-group {
     margin-bottom: 15px;
 }
@@ -26,11 +108,17 @@ textarea {
 }
 
 textarea {
-    min-height: 100px;
+    min-height: 150px;
     resize: vertical;
 }
 
-button[type="submit"] {
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.submit-btn, .update-btn {
     background: #4CAF50;
     color: white;
     padding: 10px 15px;
@@ -39,33 +127,19 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-button[type="submit"]:hover {
+.submit-btn:hover, .update-btn:hover {
     background: #45a049;
 }
 
-.add-post-link {
-    margin-bottom: 20px;
-}
-
-.add-post-link a {
+.cancel-btn {
     display: inline-block;
-    background: #4CAF50;
-    color: white;
     padding: 10px 15px;
+    background: #f1f1f1;
+    color: #333;
     text-decoration: none;
     border-radius: 4px;
 }
 
-.add-post-link a:hover {
-    background: #45a049;
+.cancel-btn:hover {
+    background: #ddd;
 }
-
-.back-link {
-    display: inline-block;
-    margin-top: 15px;
-    color: #333;
-    text-decoration: none;
-}
-
-.back-link:hover {
-    text-decoration: underline;
