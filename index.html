@@ -6,11 +6,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="add-post-link">
-    <a href="{{ url_for('add') }}">+ Add New Post</a>
-</div>
         <h1>Welcome to My Blog</h1>
-
+        <a href="{{ url_for('add') }}" class="add-post-btn">+ Add New Post</a>
+        
         {% for post in posts %}
         <div class="post">
             <h2>{{ post.title }}</h2>
@@ -18,7 +16,15 @@
             <div class="content">
                 {{ post.content }}
             </div>
-            <small>Post ID: {{ post.id }}</small>
+            <div class="post-actions">
+                <a href="{{ url_for('update', post_id=post.id) }}" class="update-btn">Update</a>
+                <form action="{{ url_for('delete', post_id=post.id) }}" method="POST">
+                    <button type="submit" class="delete-btn" 
+                            onclick="return confirm('Are you sure you want to delete this post?')">
+                        Delete
+                    </button>
+                </form>
+            </div>
         </div>
         {% endfor %}
     </div>
