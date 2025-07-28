@@ -20,9 +20,11 @@
                 <label for="content">Content:</label>
                 <textarea id="content" name="content" rows="5" required></textarea>
             </div>
-            <button type="submit">Submit</button>
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">Submit</button>
+                <a href="{{ url_for('index') }}" class="cancel-btn">Cancel</a>
+            </div>
         </form>
-        <a href="{{ url_for('index') }}" class="back-link">← Back to all posts</a>
     </div>
 </body>
 </html>
