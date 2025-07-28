@@ -25,6 +25,19 @@ def index():
     blog_posts = load_posts()
     return render_template('index.html', posts=blog_posts)
 
+@app.route('/delete/<post_id>', methods=['POST'])
+def delete(post_id):
+    # Load current posts
+    blog_posts = load_posts()
+    
+    # Find and remove the post with matching ID
+    updated_posts = [post for post in blog_posts if post['id'] != post_id]
+    
+    # Save the updated list
+    save_posts(updated_posts)
+    
+    # Redirect back to home page
+    return redirect(url_for('index'))
 
 @app.route('/add', methods=['GET', 'POST'])
 def add():
