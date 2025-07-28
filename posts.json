@@ -1,20 +1,14 @@
-# create_posts.py
-import json
-
-blog_posts = [
+[
     {
-        "id": 1,
+        "id": "1",
         "author": "John Doe",
         "title": "First Post",
-        "content": "This is my first post."
+        "content": "This is my first blog post."
     },
     {
-        "id": 2,
-        "author": "Jane Doe",
+        "id": "2",
+        "author": "Jane Smith",
         "title": "Second Post",
-        "content": "This is another post."
+        "content": "Another interesting post about Flask."
     }
 ]
-
-with open('posts.json', 'w') as f:
-    json.dump(blog_posts, f, indent=4)
